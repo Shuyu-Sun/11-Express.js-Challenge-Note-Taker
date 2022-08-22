@@ -1,4 +1,6 @@
 const express = require('express');
+const path = require('path');
+const fs = require("fs");
 const apiRoutes = require('./routes/api_routes');
 const htmlRoutes = require('./routes/html_routes');
 
@@ -11,8 +13,6 @@ app.use(express.json());
 
 
 app.use(express.static('public'));
-app.use('/api', apiRoutes);
-app.use('/', htmlRoutes);
 
 app.listen(PORT, () => {
     console.log(`API server is ready on port ${PORT}!`);
